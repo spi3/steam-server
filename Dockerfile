@@ -1,7 +1,7 @@
 FROM steamcmd/steamcmd:debian-bookworm
 
 ENV SERVER_INSTALL_DIR="/data/server"
-ENV STEAM_LOGIN=
+ENV STEAM_LOGIN=anonymous
 ENV STEAM_PASS=
 ENV STEAM_APP_ID=
 ENV EXTRA_STEAM_ARGS=
