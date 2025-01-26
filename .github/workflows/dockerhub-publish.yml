@@ -17,6 +17,13 @@ on:
     # Publish server tags as releases.
     tags: [ 'v*.*.*' ]
 
+env:
+  # Use docker.io for Docker Hub if empty
+  REGISTRY: docker.io
+  # github.repository as <account>/<repo>
+  IMAGE_NAME: ${{ github.repository }}
+
+
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
@@ -40,7 +47,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
-          images: spi3/steam-server
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
 
       - name: Build and push Docker image
         id: push
