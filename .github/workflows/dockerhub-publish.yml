@@ -12,6 +12,10 @@ name: Publish image to Dockerhub
 on:
   release:
     types: [published]
+  push:
+    branches: [ "main" ]
+    # Publish server tags as releases.
+    tags: [ 'v*.*.*' ]
 
 jobs:
   push_to_registry:
