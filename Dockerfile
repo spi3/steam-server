@@ -13,10 +13,10 @@ ENV PRE_RUN_CMD=
 
 VOLUME ["$VOLUME_DIR"]
 
-COPY run.sh /
+COPY entrypoint.sh /entrypoint.sh
 
-RUN chmod +x /run.sh
+RUN chmod +x /entrypoint.sh
 
 WORKDIR $SERVER_INSTALL_DIR
 
-ENTRYPOINT sh /run.sh
+ENTRYPOINT ["/entrypoint.sh"]
