@@ -19,3 +19,4 @@ This repository contains Docker build files for creating Docker images to easily
 | `CONFIG_DIR` | Directory for configuration files. | `/data/config` | False |
 | `EXTRA_SERVER_ARGS` | Additional arguments to pass to the server run command. | None | False |
 | `PRE_RUN_CMD` | Command to run before starting the game server. | None | False |
+| `UPDATE_SERVER` | Whether or not the steamcmd should update the server files on container start | true | False |
